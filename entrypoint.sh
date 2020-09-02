@@ -12,6 +12,6 @@ then
   docker_run="$docker_run -v $INIT_SCRIPT_PATH:/docker-entrypoint-initdb.d"
 fi
 
-docker_run="$docker_run -d -p 5432:5432 mdillon/postgis:$INPUT_POSTGRESQL_VERSION"
+docker_run="$docker_run -p 5432:5432 -d mdillon/postgis:$INPUT_POSTGRESQL_VERSION"
 
 sh -c "$docker_run"
